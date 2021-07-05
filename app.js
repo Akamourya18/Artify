@@ -65,5 +65,5 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 app.use(indexRoutes);
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Yelpcamp Server has started');
+  console.log('Artify Server has started');
 });
