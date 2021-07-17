@@ -7,12 +7,12 @@ var express = require('express'),
   flash = require('connect-flash'),
   Comment = require('./models/comments'),
   mongoose = require('mongoose'),
-  Campground = require('./models/campgrounds'),
+  art = require('./models/arts'),
   User = require('./models/user');
 //seedDB          = require("./seed")
 
 var commentRoutes = require('./routes/comments'),
-  campgroundRoutes = require('./routes/campgrounds'),
+  artRoutes = require('./routes/arts'),
   indexRoutes = require('./routes/index');
 
 //console.log(process.env.DATABASEURL);
@@ -60,8 +60,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/campgrounds', campgroundRoutes);
-app.use('/campgrounds/:id/comments', commentRoutes);
+app.use('/arts', artRoutes);
+app.use('/arts/:id/comments', commentRoutes);
 app.use(indexRoutes);
 
 app.listen(process.env.PORT || 3000, function () {
