@@ -1,3 +1,3 @@
 # Artify
 
-Soon
+Almost done. Publishing Soon
