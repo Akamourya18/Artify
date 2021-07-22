@@ -1,0 +1,31 @@
+<%- include ('../partials/header.ejs') %>
+
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Welcome to Artify!</h1>
+      <p>View our hand-picked arts from all over the world</p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/arts/new">Add a new Art</a>
+      </p>
+    </div>
+  </header>
+  <div class="row text-center" style="display: flex; flex-wrap: wrap">
+    <%arts.forEach(function(art){%>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="thumbnail">
+        <img src="<%=art.image%>" />
+        <div class="caption">
+          <h4><%=art.name%></h4>
+        </div>
+        <p>
+          <a href="/arts/<%=art._id %>" class="btn btn-primary">More Info</a>
+        </p>
+      </div>
+    </div>
+    <%})%>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script type="text/javascript" src="/stylesheet/index.js"></script>
+<%- include('../partials/footer.ejs') %>
