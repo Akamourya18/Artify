@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 });
 router.post('/', middleware.isLoggedIn, function (req, res) {
   var name = req.body.name;
-  var price = req.body.price;
+  var aboutArtist = req.body.aboutArtist;
   var image = req.body.image;
   var desc = req.body.description;
   var author = {
