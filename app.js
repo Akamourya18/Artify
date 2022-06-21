@@ -15,16 +15,17 @@ var commentRoutes = require('./routes/comments'),
   artRoutes = require('./routes/arts'),
   indexRoutes = require('./routes/index');
 
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 //console.log(process.env.DATABASEURL);
 //mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser:true, useUnifiedTopology:true});
 mongoose
-  .connect(
-    'mongodb+srv://akashmourya:Akashm@1234@cluster0.kdpp8.mongodb.net/Artify?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('connected to database');
   })
