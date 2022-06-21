@@ -25,7 +25,7 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
   var newart = {
     name: name,
     image: image,
-    price: price,
+    aboutArtist: aboutArtist,
     description: desc,
     author: author,
   };
